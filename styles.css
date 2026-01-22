@@ -1,13 +1,22 @@
 :root {
     --brand-primary: #f1a536;
     --brand-secondary: #dadfea;
+    --brand-accent: #a63223;
 }
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+}
+h1, h2, h3, h4, h5, h6,  sub, th, td{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+p, a, li {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 /* Navigation Bar Styles */
 header, footer {
@@ -19,37 +28,188 @@ header, footer {
     align-items: center;
     justify-content: space-between;
 }
+footer a, header a {
+    color: #000000;
+    text-decoration: none;
+    margin: 0 15px;
+    display: inline-block;
+}
+/* Banner Styles */
+.title-banner{
+    background-image: url('img/hero-image.jpg');
+    height: 700px;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 35%;
+    margin:0;
+    padding:0;
+}
+.title-banner h2{
+    display: inline-block;
+    width:auto;
+    margin: 0;
+    position: relative;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    font-size: 48px;
+    font-weight: bold;
+}
+#home-banner{background-image: url('img/hero-image.jpg');}
+#recipe-banner{background-image: url('img/burger-hero.jpg');}
 /*main*/
 main{
     display: flex;
     flex-flow: column nowrap;
     align-items: left;
     justify-content: center;
-    padding: 20px;
 }
-.title-banner{
-    background-image: url('img/hero-image.jpg');
-    width: 100%;
-    height: 300px;
-    background-size: cover;
-
+.section{
+    padding-left:3%;
+    padding-right:3%;
+    padding-top: 5%;
+    padding-bottom:7%;
 }
-.title-banner h1{
-    margin: 0;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
+.section:nth-of-type(even){
+    background-color: var(--brand-secondary);
 }
+.section h3{
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.section p{
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+/* Image Gallery Styles */
 .img-gallery{
     display: flex;
     gap: 10px;
-    flex-flow:row wrap;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: stretch;
+    flex-basis: 0;
 }
 .img-column{
     display: flex;
-    flex: 1;
+    flex: 1 1 0;
     flex-direction: column;
+    text-align: center;
+    object-fit:contain;
+    align-content: space-between;
+    align-items: center;
+    padding-left: 2%;
+    padding-right: 2%;
 }
-/*footer*/
-footer a{}
+.img-column img{
+    width:100%;
+    height:90%;
+    object-fit: cover;
+}
+.img-column sub{
+    font-size: 18px;
+    background-color:#ffffff;
+    display: inline-block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+}
+.img-border{
+    border: 5px solid var(--brand-secondary);
+}
+/* Recepie Styles */
+.recepie-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+.recepie-main sub{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.overview{
+    text-align: left;
+    background-color: var(--brand-secondary);
+    padding: 30px;
+    padding-left: 7%;
+    line-height: 30px;;
+}
+.overview th{
+    font-size:24px;
+    padding-bottom: 10px;
+    padding-left:;
+}
+.overview td{
+    font-size:20px;
+    padding-right: 120px;
+}
+h1{
+    font-size: 52px;
+    margin-bottom: 10px;
+}
+.quote-box{
+    background-color: var(--brand-secondary);
+    border-left: 5px solid var(--brand-accent);
+    margin: 20px 0;
+    padding: 10px 60px;
+    max-width: 1000px;
+    font-size: 24px;
+    color: grey;
+    font-weight: bold;
+}
+.recipe-box{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    text-align: left;
+    object-fit:contain;
+    align-content: space-between;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.ingredients, .directions{
+    flex: 1;
+    padding: 20px;
+    font-size:20px;
+}
+.ingredients h3, .directions h3{
+    margin-left: 18px;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+.ingredients ul, .directions ol{
+    right: 20px;
+}
+.rating {
+    color: var(--brand-accent);
+    font-size: 24px;
+}
+.save-container{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+.save-recepie-btn {
+    background-color: var(--brand-accent);
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+}
+.print-recepie-btn {
+    background-color: #ffffff;
+    color: #272727;
+    padding: 10px 20px;
+    border: 1px solid #272727;
+    border-radius: 50%;
+    font-size: 24px;
+}
